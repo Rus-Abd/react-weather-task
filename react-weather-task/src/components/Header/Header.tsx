@@ -7,8 +7,11 @@ function Header() {
 
     return (
         <header>
-            <h1>{date.date}</h1>
-            <h2>{date.time}</h2>
+            <div className="date">
+                <h1>{date.time}</h1>
+                <h2>{date.date}</h2>
+            </div>
+            <div className="location">Minsk</div>
         </header>
     )
 }
