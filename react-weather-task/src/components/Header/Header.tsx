@@ -4,9 +4,11 @@ import './header.css'
 
 function Header() {
     const date = useTime()
+
     return (
         <header>
-            <h1>{date.toUTCString()}</h1>
+            <h1>{date.date}</h1>
+            <h2>{date.time}</h2>
         </header>
     )
 }

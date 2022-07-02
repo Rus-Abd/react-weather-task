@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import formatDate from '../pipes/datePipe'
 
 export default function useTime() {
     const [date, setDate] = useState(new Date())
@@ -12,5 +13,5 @@ export default function useTime() {
             clearInterval(timerId)
         }
     }, [])
-    return date
+    return formatDate(date)
 }
