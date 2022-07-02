@@ -7,7 +7,7 @@ import getEvents from './utils/getCalendarEvents'
 function App() {
     const calendarApi = getEvents('jokerk58@gmail.com')
     console.log(calendarApi)
-
+    console.log(new Date())
     return (
         <div className="container">
             <Login />
