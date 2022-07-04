@@ -4,23 +4,20 @@ import { configureStore } from '@reduxjs/toolkit'
 import createSagaMiddleware from 'redux-saga'
 import { combineReducers } from 'redux'
 import calendarSlice from '../slices/calendarSlice'
-import eventsWatcher from '../sagas/calendarSaga'
+
+import RootSaga from '../sagas/rootSaga'
 
 const rootReducer = combineReducers({ calendar: calendarSlice })
 
-function* RootSaga() {
-    yield all([fork(eventsWatcher)])
-}
 const sagaMiddleware = createSagaMiddleware()
 
 const store = configureStore({
     reducer: rootReducer,
 
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: false,
-            thunk: false,
-        }).concat(sagaMiddleware),
+    middleware: (getDefaultMiddleware) => [
+        ...getDefaultMiddleware({ thunk: false, serializableCheck: false }),
+        sagaMiddleware,
+    ],
 })
 
 sagaMiddleware.run(RootSaga)

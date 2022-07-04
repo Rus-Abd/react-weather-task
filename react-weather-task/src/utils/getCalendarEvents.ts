@@ -3,7 +3,7 @@
 // client id 401779271274-cm5hs1ag39cuf6itmfa1k3te9m832d6u.apps.googleusercontent.com
 import ApiCalendar from 'react-google-calendar-api'
 
-export default function getEvents() {
+export default function getEventsConfig() {
     const config = {
         clientId: '401779271274-cm5hs1ag39cuf6itmfa1k3te9m832d6u.apps.googleusercontent.com',
         apiKey: 'AIzaSyBdiKy6iTUgQDVocUQb7BaGoKImi9OjMlk',

@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
-import getEvents from '../../utils/getCalendarEvents'
+import { useDispatch } from 'react-redux'
+import requestGetEvents from '../../redux/sagas/requests/calendar'
+import { getEvents, loadEvents } from '../../redux/slices/calendarSlice'
+import getEventsConfig from '../../utils/getCalendarEvents'
+
 import './login.css'
 
 export default function Login() {
-    const calendarApi = getEvents()
+    const dispatch = useDispatch()
+    const calendarApi = getEventsConfig()
 
     const [idInput, setIdInput] = useState('')
 
@@ -11,13 +16,9 @@ export default function Login() {
         setIdInput((event.target as HTMLInputElement).value)
     }
 
-    console.log(calendarApi)
-
     const handleSubmit = () => () => {
-        calendarApi.handleAuthClick()
-        calendarApi.listUpcomingEvents(10, idInput).then(({ result }: any) => {
-            console.log(result.items)
-        })
+        // requestGetEvents(idInput, calendarApi)
+        dispatch(getEvents({ idInput, calendarApi }))
     }
     return (
         <form className="login">
