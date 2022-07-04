@@ -39,6 +39,7 @@
             }
         ],
         "jsx-a11y/label-has-associated-control": "off",
-        "default-param-last": "off"
+        "default-param-last": "off",
+        "@typescript-eslint/no-empty-function": "off"
     }
 }
