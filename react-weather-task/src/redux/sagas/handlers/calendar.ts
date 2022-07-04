@@ -4,10 +4,17 @@ import { loadEvents, failedEvents } from '../../slices/calendarSlice'
 import requestGetEvents from '../requests/calendar'
 
 export default function* handleGetEvents(action) {
+    console.log('generator handle get events start')
     try {
-        const events: YieldExpression = yield call(requestGetEvents, action)
+        console.log('generator handle get events middle')
+        const events: YieldExpression = yield call(
+            requestGetEvents,
+            action.payload.idInput,
+            action.payload.calendarApi
+        )
         yield put(loadEvents(events))
     } catch (error) {
         yield put(failedEvents(error))
+        console.log(error)
     }
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import requestGetEvents from '../../redux/sagas/requests/calendar'
-import { getEvents, loadEvents } from '../../redux/slices/calendarSlice'
+
+import { getEvents } from '../../redux/slices/calendarSlice'
 import getEventsConfig from '../../utils/getCalendarEvents'
 
 import './login.css'
@@ -17,7 +17,6 @@ export default function Login() {
     }
 
     const handleSubmit = () => () => {
-        // requestGetEvents(idInput, calendarApi)
         dispatch(getEvents({ idInput, calendarApi }))
     }
     return (
