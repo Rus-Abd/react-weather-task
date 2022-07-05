@@ -9,7 +9,7 @@ export interface Iweather {
 }
 export interface IformattedWeather {
     0: string
-    1: { icon: string; weather: number }
+    1: { icon: string; weather: number; id: string }
 }
 export type Tlocation = {
     city: string

@@ -1,7 +1,13 @@
 import { Tevent } from '../types'
 
+type Tacc = {
+    time: string
+    text: string
+    id: string
+}
+
 export default function formatEvents(events: Array<Tevent>) {
-    const result = events.reduce((acc, curr) => {
+    const result = events.reduce((acc: Tacc[], curr) => {
         const minutes =
             new Date(curr.start.dateTime).getMinutes().toString().length === 1
                 ? `0${new Date(curr.start.dateTime).getMinutes()}`
