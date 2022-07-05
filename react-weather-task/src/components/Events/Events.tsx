@@ -1,23 +1,21 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Istate } from '../../types'
 import './events.css'
-
-interface Istate {
-    calendar: {
-        events: string[]
-    }
-}
 
 function Events() {
     const eventsArr = useSelector((state: Istate) => state.calendar.events)
-    const currstore = useSelector((state: Istate) => state)
-    console.log(currstore)
-    console.log(eventsArr)
+
     return (
         <div className="events">
             <ul>
                 {eventsArr && eventsArr.length > 0
-                    ? eventsArr.map((el: string) => <li key={el}>${el}</li>)
+                    ? eventsArr.map((el) => (
+                          <li key={el.id}>
+                              <span>{el.time}</span>
+                              <p>{el.text}</p>
+                          </li>
+                      ))
                     : null}
             </ul>
         </div>

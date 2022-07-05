@@ -1,17 +1,18 @@
 import formatEvents from '../../../pipes/eventsPipe'
+import { Tevent } from '../../../types'
 
 interface Icalendar {
     handleAuthClick: () => void
     listUpcomingEvents: (arg0: number, arg1: string | undefined) => Promise<any>
 }
 
-export default function requestGetEvents(idInput: string, calendar: Icalendar) {
-    console.log(idInput)
-    console.log(calendar)
+export default async function requestGetEvents(idInput: string, calendar: Icalendar) {
+    let temp: Tevent | [] = []
+
     calendar.handleAuthClick()
-    calendar.listUpcomingEvents(10, idInput).then(({ result }: any) => {
-        console.log(result.items)
-        console.log(formatEvents(result.items))
-        return formatEvents(result.items)
+    await calendar.listUpcomingEvents(10, idInput).then(({ result }: any) => {
+        temp = formatEvents(result.items)
     })
+
+    return temp
 }

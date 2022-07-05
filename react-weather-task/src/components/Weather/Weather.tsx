@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { loadEvents } from '../../redux/slices/calendarSlice'
+
 import fetchWeather from '../../utils/getWeather'
 import './weather.css'
 

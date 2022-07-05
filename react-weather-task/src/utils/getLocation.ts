@@ -1,10 +1,7 @@
 // https://api.bigdatacloud.net/data/reverse-geocode?latitude=-34.93129&longitude=138.59669&localityLanguage=en&key=[YOUR API KEY]
 // bdc_95f3bf29bed848adbdd7e190701d600d
 
-type Tlocation = {
-    city: string
-    countryName: string
-}
+import { Tlocation } from '../types'
 
 let latitude = 0
 let longitude = 0

@@ -11,6 +11,8 @@ const calendarSlice = createSlice({
     name: 'calendar',
     initialState: initState,
     reducers: {
+        // REQUEST_EVENTS REQUEST_EBVENTS_SUCCESS ERROR
+        //
         getEvents(state, action) {
             console.log('get events triggered')
             console.log(action.payload)
