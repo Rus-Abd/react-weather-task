@@ -25,10 +25,7 @@ export default function Login() {
                 Calendar ID
             </label>
             <input type="text" className="login-input" id="username" onChange={handleIdChange} />
-            <label className="login-label" htmlFor="password">
-                City
-            </label>
-            <input type="password" className="login-input" id="password" />
+
             <button type="button" className="login-button" onClick={handleSubmit()}>
                 Enter
             </button>

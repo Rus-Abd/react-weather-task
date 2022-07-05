@@ -4,6 +4,7 @@ import Events from './components/Events/Events'
 
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
+import Weather from './components/Weather/Weather'
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <Login />
             <Header />
             <Events />
+            <Weather />
         </div>
     )
 }

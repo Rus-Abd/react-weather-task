@@ -3,7 +3,11 @@ import { YieldExpression } from 'typescript'
 import { loadEvents, failedEvents } from '../../slices/calendarSlice'
 import requestGetEvents from '../requests/calendar'
 
-export default function* handleGetEvents(action) {
+interface Iaction {
+    payload: { idInput: string; calendarApi: any }
+}
+
+export default function* handleGetEvents(action: Iaction) {
     console.log('generator handle get events start')
     try {
         console.log('generator handle get events middle')

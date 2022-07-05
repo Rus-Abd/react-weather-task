@@ -10,6 +10,9 @@ interface Istate {
 
 function Events() {
     const eventsArr = useSelector((state: Istate) => state.calendar.events)
+    const currstore = useSelector((state: Istate) => state)
+    console.log(currstore)
+    console.log(eventsArr)
     return (
         <div className="events">
             <ul>
