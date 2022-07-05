@@ -13,7 +13,7 @@ const calendarSlice = createSlice({
     reducers: {
         getEvents(state, action) {
             console.log('get events triggered')
-
+            console.log(action.payload)
             return {
                 ...state,
                 isLoading: true,

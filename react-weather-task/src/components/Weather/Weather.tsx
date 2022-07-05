@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { loadEvents } from '../../redux/slices/calendarSlice'
+import fetchWeather from '../../utils/getWeather'
 import './weather.css'
 
 function Weather() {
@@ -7,24 +9,22 @@ function Weather() {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        const fetchData = async () => {
-            navigator.geolocation.getCurrentPosition((position) => {
-                setLat(position.coords.latitude)
-                setLong(position.coords.longitude)
-            })
-
-            await fetch(
-                `https://api.openweathermap.org/data/2.5/forecast/?lat=${lat}&lon=${long}&units=metric&APPID=a32fc8e429c811dbafb887d21cb6e1b8`
-            )
-                .then((res) => res.json())
-                .then((result) => {
-                    setData(result)
-                    console.log(result)
-                })
-        }
-        fetchData()
+        fetchWeather(lat, setLat, long, setLong, setData)
     }, [lat, long])
-    return <div className="weather">Weather</div>
+
+    return (
+        <div className="weather">
+            <ul className="weather-list">
+                {data.map((el) => (
+                    <li key={el} className="weather-list__item">
+                        <span> {el[0]}</span>
+                        <img src={el[1].icon} alt="" />
+                        <span>{el[1].weather}</span>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 }
 
 export default Weather

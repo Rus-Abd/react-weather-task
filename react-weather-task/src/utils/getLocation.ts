@@ -18,9 +18,7 @@ const getLocation = (setLoc: (arg0: Tlocation) => void) => {
         `https://api.bigdatacloud.net/data/reverse-geocode?latitude=${latitude}&longitude=${longitude}&localityLanguage=en&key=bdc_95f3bf29bed848adbdd7e190701d600d`
     )
         .then((res) => res.json())
-        .catch((err) => console.log(err))
         .then((result) => {
-            console.log(result)
             setLoc(result)
         })
 }
