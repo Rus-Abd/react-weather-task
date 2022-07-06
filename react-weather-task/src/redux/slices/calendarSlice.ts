@@ -11,19 +11,19 @@ const calendarSlice = createSlice({
     name: 'calendar',
     initialState: initState,
     reducers: {
-        getEvents(state, action) {
+        getEvents(state, { payload }) {
             return {
                 ...state,
                 isLoading: true,
-                calendarId: action.payload.idInput,
-                calendar: action.payload.calendarApi,
+                calendarId: payload.idInput,
+                calendar: payload.calendarApi,
             }
         },
-        loadEvents(state, action) {
-            return { ...state, isLoading: false, events: action.payload }
+        loadEvents(state, { payload }) {
+            return { ...state, isLoading: false, events: payload }
         },
-        failedEvents(state, action) {
-            return { ...state, isLoading: false, err: action.payload }
+        failedEvents(state, { payload }) {
+            return { ...state, isLoading: false, err: payload }
         },
     },
 })

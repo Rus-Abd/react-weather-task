@@ -17,6 +17,8 @@ const sagaMiddleware = createSagaMiddleware()
 const persistConfig = {
     key: 'root',
     storage,
+    blacklist: ['calendar.isLoading'],
+
     transforms: [expireIn(expireTime, expirationKey, [])],
 }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
