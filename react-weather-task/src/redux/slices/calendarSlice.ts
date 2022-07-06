@@ -11,11 +11,7 @@ const calendarSlice = createSlice({
     name: 'calendar',
     initialState: initState,
     reducers: {
-        // REQUEST_EVENTS REQUEST_EBVENTS_SUCCESS ERROR
-        //
         getEvents(state, action) {
-            console.log('get events triggered')
-            console.log(action.payload)
             return {
                 ...state,
                 isLoading: true,
@@ -24,13 +20,9 @@ const calendarSlice = createSlice({
             }
         },
         loadEvents(state, action) {
-            console.log('load events triggeredd')
-            console.log('UNDER THIS LINE IS LOADEVENTS PAYLOAD')
-            console.log(action.payload)
             return { ...state, isLoading: false, events: action.payload }
         },
         failedEvents(state, action) {
-            console.log('failed events triggeredd')
             return { ...state, isLoading: false, err: action.payload }
         },
     },

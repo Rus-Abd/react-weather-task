@@ -3,9 +3,7 @@ import { Iweather } from '../types'
 const weekDays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
 const formatWeather = (weatherObj: Iweather) => {
-    const formattedWeather = weatherObj.list.reduce((acc, curr, index) => {
-        console.log('aaaaaaaaAAA')
-        console.log(weatherObj)
+    const formattedWeather = weatherObj.list.reduce((acc, curr) => {
         const currDate = new Date(curr.dt_txt)
         const currDay = weekDays[currDate.getDay()]
         const currIcon = curr.weather[0].icon
