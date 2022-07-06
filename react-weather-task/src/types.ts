@@ -27,4 +27,5 @@ export type TformattedEvent = {
 }
 export interface Istate {
     calendar: { isLoading: boolean; events: TformattedEvent[] }
+    weather: { weatherArr: IformattedWeather[]; isLoading: boolean; err: Error }
 }

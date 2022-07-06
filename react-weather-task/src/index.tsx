@@ -10,6 +10,7 @@ import Loader from './components/Loader/Loader'
 
 const persistor = persistStore(store)
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+
 root.render(
     <React.StrictMode>
         <Provider store={store}>

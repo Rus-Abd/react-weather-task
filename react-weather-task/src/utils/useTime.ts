@@ -7,11 +7,14 @@ export default function useTime() {
     function refreshClock() {
         setDate(new Date())
     }
+
     useEffect(() => {
         const timerId = setInterval(refreshClock, 1000)
+
         return function cleanup() {
             clearInterval(timerId)
         }
     }, [])
+
     return formatDate(date)
 }

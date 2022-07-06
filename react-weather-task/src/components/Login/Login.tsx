@@ -11,7 +11,6 @@ export default function Login() {
     const dispatch = useDispatch()
     const calendarApi = getEventsConfig()
     const isLoading = useSelector((state: Istate) => state.calendar.isLoading)
-
     const [idInput, setIdInput] = useState('')
 
     const handleIdChange = (event: React.ChangeEvent) => {

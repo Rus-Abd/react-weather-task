@@ -1,27 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { IformattedWeather, Istate } from '../../types'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getWeather } from '../../redux/slices/weatherSlice'
+import { Istate } from '../../types'
 
-import fetchWeather from '../../utils/getWeather'
 import Loader from '../Loader/Loader'
 import './weather.css'
 
 function Weather() {
-    const [lat, setLat] = useState(0)
-    const [long, setLong] = useState(0)
-    const [data, setData] = useState<IformattedWeather[]>([])
+    const dispatch = useDispatch()
     const isLoading = useSelector((state: Istate) => state.calendar.isLoading)
-    useEffect(() => {
-        fetchWeather(lat, setLat, long, setLong, setData)
-    }, [lat, long])
+    const weatherArr = useSelector((state: Istate) => state.weather.weatherArr)
 
+    dispatch(getWeather())
     return (
         <div className="weather">
             <ul className="weather-list">
                 {isLoading ? (
                     <Loader />
                 ) : (
-                    data.map((el) => (
+                    weatherArr.map((el) => (
                         <li key={el[1].id} className="weather-list__item">
                             <span> {el[0]}</span>
                             <img src={el[1].icon} alt="" />

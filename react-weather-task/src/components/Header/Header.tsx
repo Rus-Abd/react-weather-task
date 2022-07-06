@@ -10,6 +10,7 @@ function Header() {
     const [location, setLocation] = useState({ city: 'Unkown', countryName: 'unkown' })
     const isLoading = useSelector((state: Istate) => state.calendar.isLoading)
     const date = useTime()
+
     useEffect(() => {
         getLocation(setLocation)
     }, [])

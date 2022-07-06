@@ -8,6 +8,7 @@ const formatWeather = (weatherObj: Iweather) => {
         const currDay = weekDays[currDate.getDay()]
         const currIcon = curr.weather[0].icon
         const currWeather = curr.main.temp
+
         return {
             ...acc,
             [currDay]: {
@@ -20,4 +21,5 @@ const formatWeather = (weatherObj: Iweather) => {
 
     return Object.entries(formattedWeather)
 }
+
 export default formatWeather

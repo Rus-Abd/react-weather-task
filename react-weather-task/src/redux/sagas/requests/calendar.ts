@@ -13,6 +13,7 @@ export default async function requestGetEvents(idInput: string, calendar: Icalen
     let temp: Tacc[] = []
 
     calendar.handleAuthClick()
+
     await calendar.listUpcomingEvents(3, idInput).then(({ result }: any) => {
         temp = formatEvents(result.items)
     })

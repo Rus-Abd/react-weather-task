@@ -7,8 +7,9 @@ import expireIn from 'redux-persist-transform-expire-in'
 
 import calendarSlice from '../slices/calendarSlice'
 import RootSaga from '../sagas/rootSaga'
+import weatherSlice from '../slices/weatherSlice'
 
-const rootReducer = combineReducers({ calendar: calendarSlice })
+const rootReducer = combineReducers({ calendar: calendarSlice, weather: weatherSlice })
 
 const expireTime = 5 * 60 * 60 * 1000
 const expirationKey = 'expirationKey'
@@ -17,7 +18,7 @@ const sagaMiddleware = createSagaMiddleware()
 const persistConfig = {
     key: 'root',
     storage,
-    blacklist: ['calendar.isLoading'],
+    blacklist: ['calendar.isLoading', 'weather.isLoading'],
 
     transforms: [expireIn(expireTime, expirationKey, [])],
 }
