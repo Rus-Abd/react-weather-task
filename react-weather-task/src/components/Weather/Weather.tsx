@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getWeather } from '../../redux/slices/weatherSlice'
 import { Istate } from '../../types'
@@ -11,7 +11,10 @@ function Weather() {
     const isLoading = useSelector((state: Istate) => state.calendar.isLoading)
     const weatherArr = useSelector((state: Istate) => state.weather.weatherArr)
 
-    dispatch(getWeather())
+    useEffect(() => {
+        dispatch(getWeather())
+    }, [])
+
     return (
         <div className="weather">
             <ul className="weather-list">

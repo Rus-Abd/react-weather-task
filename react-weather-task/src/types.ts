@@ -15,11 +15,11 @@ export type Tlocation = {
     city: string
     countryName: string
 }
+export type TeventItem = { start: { dateTime: string }; summary: string; id: string }
 export type Tevent = {
-    start: { dateTime: string }
-    summary: string
-    id: string
+    result: { items: TeventItem[] }
 }
+
 export type TformattedEvent = {
     time: string
     id: string

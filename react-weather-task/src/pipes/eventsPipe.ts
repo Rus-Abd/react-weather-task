@@ -6,7 +6,7 @@ type Tacc = {
     id: string
 }
 
-export default function formatEvents(events: Array<Tevent>) {
+export default function formatEvents(events: Tevent['result']['items']) {
     const result = events.reduce((acc: Tacc[], curr) => {
         const minutes =
             new Date(curr.start.dateTime).getMinutes().toString().length === 1
