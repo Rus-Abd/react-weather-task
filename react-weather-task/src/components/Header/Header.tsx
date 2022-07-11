@@ -4,6 +4,7 @@ import { Istate } from '../../types'
 import getLocation from '../../utils/getLocation'
 import useTime from '../../utils/useTime'
 import Loader from '../Loader/Loader'
+import Settings from '../Settings/Settings'
 
 import { HeaderEl, HeaderH1, HeaderH2, Location } from './styled'
 
@@ -24,6 +25,7 @@ function Header() {
             </div>
             <Location>
                 {isLoading ? <Loader /> : `${location.city},${location.countryName}`}
+                <Settings />
             </Location>
         </HeaderEl>
     )

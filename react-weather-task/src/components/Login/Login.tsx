@@ -12,9 +12,14 @@ export default function Login() {
     const calendarApi = getEventsConfig()
     const isLoading = useSelector((state: Istate) => state.calendar.isLoading)
     const [idInput, setIdInput] = useState('')
+    const [cityInout, setCityInput] = useState('')
 
     const handleIdChange = (event: React.ChangeEvent) => {
         setIdInput((event.target as HTMLInputElement).value)
+    }
+
+    const handleCityChange = (event: React.ChangeEvent) => {
+        setCityInput((event.target as HTMLInputElement).value)
     }
 
     const handleSubmit = () => () => {
@@ -31,7 +36,7 @@ export default function Login() {
                     <FormInput type="text" id="calendarId" onChange={handleIdChange} />
 
                     <FormLabel>City</FormLabel>
-                    <FormInput type="text" id="city" />
+                    <FormInput type="text" id="city" onChange={handleCityChange} />
                     <FormButton type="button" onClick={handleSubmit()}>
                         Enter
                     </FormButton>
