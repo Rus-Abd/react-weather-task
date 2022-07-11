@@ -1,4 +1,6 @@
-.weather {
+import styled from 'styled-components'
+
+export const WeatherContainer = styled.div`
     width: 100%;
     height: 300px;
     background-color: #354377;
@@ -8,16 +10,16 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-.weather-list {
+`
+export const List = styled.ul`
     display: flex;
     list-style: none;
     justify-content: space-evenly;
     width: 100%;
-}
-.weather-list__item {
+`
+export const ListItem = styled.li`
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-}
+`

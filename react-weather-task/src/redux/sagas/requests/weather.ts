@@ -1,10 +1,12 @@
 import formatWeather from '../../../pipes/weatherPipe'
 import { IformattedWeather, Iweather } from '../../../types'
+import store from '../../store/store'
 
 const requestGethWeather = async () => {
     let lat = 0
     let long = 0
     let weatherArr
+    console.log(store.getState())
 
     navigator.geolocation.getCurrentPosition((position) => {
         lat = position.coords.latitude

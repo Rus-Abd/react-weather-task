@@ -4,7 +4,7 @@ import { getWeather } from '../../redux/slices/weatherSlice'
 import { Istate } from '../../types'
 
 import Loader from '../Loader/Loader'
-import './weather.css'
+import { List, ListItem, WeatherContainer } from './styled'
 
 function Weather() {
     const dispatch = useDispatch()
@@ -16,21 +16,21 @@ function Weather() {
     }, [])
 
     return (
-        <div className="weather">
-            <ul className="weather-list">
+        <WeatherContainer>
+            <List className="weather-list">
                 {isLoading ? (
                     <Loader />
                 ) : (
                     weatherArr.map((el) => (
-                        <li key={el[1].id} className="weather-list__item">
+                        <ListItem key={el[1].id}>
                             <span> {el[0]}</span>
                             <img src={el[1].icon} alt="" />
                             <span>{el[1].weather}</span>
-                        </li>
+                        </ListItem>
                     ))
                 )}
-            </ul>
-        </div>
+            </List>
+        </WeatherContainer>
     )
 }
 

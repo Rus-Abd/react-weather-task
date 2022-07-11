@@ -1,5 +1,7 @@
-.login {
-    height: 300px;
+import styled from 'styled-components'
+
+export const Form = styled.form`
+    height: 370px;
     width: 400px;
     background-color: rgba(255, 255, 255, 0.13);
     position: absolute;
@@ -10,11 +12,11 @@
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-    padding: 50px 35px;
+    padding: 5px 35px;
     color: #ffffff;
     z-index: 10;
-}
-.login-button {
+`
+export const FormButton = styled.button`
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
@@ -24,15 +26,15 @@
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
-}
-.login-label {
+`
+export const FormLabel = styled.label`
     display: block;
     margin-top: 30px;
     font-size: 22px;
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
-}
-.login-input {
+`
+export const FormInput = styled.input`
     display: block;
     height: 50px;
     width: 100%;
@@ -43,7 +45,7 @@
     font-size: 14px;
     font-weight: 300;
     border: none;
-}
-.login-input:focus {
-    outline: none;
-}
+    &:focus {
+        outline: none;
+    }
+`

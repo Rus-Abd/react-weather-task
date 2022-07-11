@@ -4,7 +4,8 @@ import { Istate } from '../../types'
 import getLocation from '../../utils/getLocation'
 import useTime from '../../utils/useTime'
 import Loader from '../Loader/Loader'
-import './header.css'
+
+import { HeaderEl, HeaderH1, HeaderH2, Location } from './styled'
 
 function Header() {
     const [location, setLocation] = useState({ city: 'Unkown', countryName: 'unkown' })
@@ -16,15 +17,15 @@ function Header() {
     }, [])
 
     return (
-        <header>
-            <div className="date">
-                <h1>{date.time}</h1>
-                <h2>{date.date}</h2>
+        <HeaderEl>
+            <div>
+                <HeaderH1>{date.time}</HeaderH1>
+                <HeaderH2>{date.date}</HeaderH2>
             </div>
-            <div className="location">
+            <Location>
                 {isLoading ? <Loader /> : `${location.city},${location.countryName}`}
-            </div>
-        </header>
+            </Location>
+        </HeaderEl>
     )
 }
 

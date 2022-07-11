@@ -5,7 +5,7 @@ import { getEvents } from '../../redux/slices/calendarSlice'
 import { Istate } from '../../types'
 import getEventsConfig from '../../utils/getCalendarEvents'
 
-import './login.css'
+import { Form, FormButton, FormInput, FormLabel } from './styled'
 
 export default function Login() {
     const dispatch = useDispatch()
@@ -20,26 +20,22 @@ export default function Login() {
     const handleSubmit = () => () => {
         dispatch(getEvents({ idInput, calendarApi }))
     }
+
     return (
         <>
             {isLoading ? (
                 <Loader />
             ) : (
-                <form className="login">
-                    <label className="login-label" htmlFor="username">
-                        Calendar ID
-                    </label>
-                    <input
-                        type="text"
-                        className="login-input"
-                        id="username"
-                        onChange={handleIdChange}
-                    />
+                <Form>
+                    <FormLabel>Calendar ID</FormLabel>
+                    <FormInput type="text" id="calendarId" onChange={handleIdChange} />
 
-                    <button type="button" className="login-button" onClick={handleSubmit()}>
+                    <FormLabel>City</FormLabel>
+                    <FormInput type="text" id="city" />
+                    <FormButton type="button" onClick={handleSubmit()}>
                         Enter
-                    </button>
-                </form>
+                    </FormButton>
+                </Form>
             )}
         </>
     )
