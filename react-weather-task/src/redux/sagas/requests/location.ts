@@ -3,11 +3,10 @@ export default async function requestGetLocation(city: string) {
     let longitude = 0
 
     await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=a32fc8e429c811dbafb887d21cb6e1b8`
+        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${process.env.REACT_APP_API_LOCATION}`
     )
         .then((res) => res.json())
         .then((res) => {
-            console.log(res)
             latitude = res[0].lat
             longitude = res[0].lon
         })

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import useTime from '@utils/useTime'
 import { Istate } from '../../types'
 
-import useTime from '../../utils/useTime'
 import Loader from '../Loader/Loader'
 import Settings from '../Settings/Settings'
 

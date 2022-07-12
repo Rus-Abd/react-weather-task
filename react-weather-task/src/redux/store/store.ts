@@ -5,10 +5,10 @@ import createSagaMiddleware from 'redux-saga'
 import { combineReducers } from 'redux'
 import expireIn from 'redux-persist-transform-expire-in'
 
-import calendarSlice from '../slices/calendarSlice'
-import RootSaga from '../sagas/rootSaga'
-import weatherSlice from '../slices/weatherSlice'
-import locationSlice from '../slices/locationSlice'
+import calendarSlice from '@slices/calendarSlice'
+import weatherSlice from '@slices/weatherSlice'
+import locationSlice from '@slices/locationSlice'
+import RootSaga from '@sagas/rootSaga'
 
 const rootReducer = combineReducers({
     calendar: calendarSlice,

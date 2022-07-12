@@ -1,4 +1,4 @@
-import formatEvents from '../../../pipes/eventsPipe'
+import formatEvents from '@pipes/eventsPipe'
 import { Tevent } from '../../../types'
 
 interface Icalendar {

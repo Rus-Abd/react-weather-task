@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { getDailyWeather, getWeather } from '../../redux/slices/weatherSlice'
+import { getDailyWeather, getWeather } from '@slices/weatherSlice'
 import { SettingsBox, SettingsEl, SettingsIcon, SettingsBoxItem } from './styled'
 
 function Settings() {

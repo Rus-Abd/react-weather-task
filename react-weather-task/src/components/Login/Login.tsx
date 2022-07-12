@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+
+import { getEvents } from '@slices/calendarSlice'
+import { getLocation } from '@slices/locationSlice'
+import getEventsConfig from '@utils/getCalendarEvents'
+
 import Loader from '../Loader/Loader'
-import { getEvents } from '../../redux/slices/calendarSlice'
 import { Istate } from '../../types'
-import getEventsConfig from '../../utils/getCalendarEvents'
 
 import { Form, FormButton, FormInput, FormLabel } from './styled'
-import { getLocation } from '../../redux/slices/locationSlice'
 
 export default function Login() {
     const dispatch = useDispatch()

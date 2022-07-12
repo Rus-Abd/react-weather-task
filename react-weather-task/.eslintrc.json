@@ -41,6 +41,7 @@
         "jsx-a11y/label-has-associated-control": "off",
         "default-param-last": "off",
         "@typescript-eslint/no-empty-function": "off",
-        "react/jsx-no-useless-fragment": "off"
+        "react/jsx-no-useless-fragment": "off",
+        "import/no-unresolved": "off"
     }
 }
