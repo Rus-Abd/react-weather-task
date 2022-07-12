@@ -27,8 +27,23 @@ export type TformattedEvent = {
     id: string
     text: string
 }
+export interface IhourlyWeather {
+    temp_c: string
+    time: string
+    condition: { icon: string }
+    time_epoch: string
+}
 export interface Istate {
     calendar: { isLoading: boolean; events: TformattedEvent[] }
-    weather: { weatherArr: IformattedWeather[]; isLoading: boolean; err: Error }
+    weather: {
+        weatherArr: IformattedWeather[] | IhourlyWeather[]
+        isLoading: boolean
+        err: Error
+        weekly: boolean
+    }
     location: { location: { city: string; country: string } }
+}
+
+export interface IdailyWeather {
+    forecast: { forecastday: [{ hour: IhourlyWeather[] }] }
 }

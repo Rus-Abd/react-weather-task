@@ -3,6 +3,7 @@ import { Iweather } from '../types'
 const weekDays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
 const formatWeather = (weatherObj: Iweather) => {
+    console.log(weatherObj)
     const formattedWeather = weatherObj.list.reduce((acc, curr) => {
         const currDate = new Date(curr.dt_txt)
         const currDay = weekDays[currDate.getDay()]
@@ -18,7 +19,7 @@ const formatWeather = (weatherObj: Iweather) => {
             },
         }
     }, {})
-
+    console.log(Object.entries(formattedWeather))
     return Object.entries(formattedWeather)
 }
 

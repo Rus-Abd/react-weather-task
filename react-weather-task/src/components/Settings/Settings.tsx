@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { getDailyWeather, getWeather } from '../../redux/slices/weatherSlice'
 import { SettingsBox, SettingsEl, SettingsIcon, SettingsBoxItem } from './styled'
 
 function Settings() {
+    const dispatch = useDispatch()
     const [showBox, setShowBox] = useState(false)
 
     const handleClick = () => () => {
@@ -12,8 +15,8 @@ function Settings() {
         <SettingsEl>
             <SettingsIcon onClick={handleClick()} />
             <SettingsBox show={showBox}>
-                <SettingsBoxItem>Weekly</SettingsBoxItem>
-                <SettingsBoxItem>daily</SettingsBoxItem>
+                <SettingsBoxItem onClick={() => dispatch(getWeather())}>Weekly</SettingsBoxItem>
+                <SettingsBoxItem onClick={() => dispatch(getDailyWeather())}>daily</SettingsBoxItem>
             </SettingsBox>
         </SettingsEl>
     )

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const List = styled.ul`
+    display: inline-block;
     width: 350px;
     margin-top: 15px;
     background-color: rgba(255, 255, 255, 0.13);
