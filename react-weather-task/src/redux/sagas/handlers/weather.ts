@@ -1,12 +1,12 @@
 import { call, put } from 'redux-saga/effects'
 import { YieldExpression } from 'typescript'
 import { failedWeather, loadWeather } from '../../slices/weatherSlice'
-import requestGethWeather from '../requests/weather'
+import requestGetWeather from '../requests/weather'
 
 export default function* handleGetWeather() {
     try {
-        const events: YieldExpression = yield call(requestGethWeather)
-        yield put(loadWeather(events))
+        const weatherArray: YieldExpression = yield call(requestGetWeather)
+        yield put(loadWeather(weatherArray))
     } catch (error) {
         yield put(failedWeather(error))
     }

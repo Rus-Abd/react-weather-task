@@ -9,13 +9,9 @@ import Settings from '../Settings/Settings'
 import { HeaderEl, HeaderH1, HeaderH2, Location } from './styled'
 
 function Header() {
-    const [location, setLocation] = useState({ city: 'Unkown', countryName: 'unkown' })
     const isLoading = useSelector((state: Istate) => state.calendar.isLoading)
+    const location = useSelector((state: Istate) => state.location.location)
     const date = useTime()
-
-    useEffect(() => {
-        getLocation(setLocation)
-    }, [])
 
     return (
         <HeaderEl>
@@ -23,10 +19,10 @@ function Header() {
                 <HeaderH1>{date.time}</HeaderH1>
                 <HeaderH2>{date.date}</HeaderH2>
             </div>
-            <Location>
-                {isLoading ? <Loader /> : `${location.city},${location.countryName}`}
+            <div>
+                <Location>{isLoading ? <Loader /> : `${location.city || ''}`}</Location>{' '}
                 <Settings />
-            </Location>
+            </div>
         </HeaderEl>
     )
 }

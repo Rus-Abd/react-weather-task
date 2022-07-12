@@ -6,13 +6,14 @@ import { Istate } from '../../types'
 import getEventsConfig from '../../utils/getCalendarEvents'
 
 import { Form, FormButton, FormInput, FormLabel } from './styled'
+import { getLocation } from '../../redux/slices/locationSlice'
 
 export default function Login() {
     const dispatch = useDispatch()
     const calendarApi = getEventsConfig()
     const isLoading = useSelector((state: Istate) => state.calendar.isLoading)
     const [idInput, setIdInput] = useState('')
-    const [cityInout, setCityInput] = useState('')
+    const [cityInput, setCityInput] = useState('')
 
     const handleIdChange = (event: React.ChangeEvent) => {
         setIdInput((event.target as HTMLInputElement).value)
@@ -23,6 +24,7 @@ export default function Login() {
     }
 
     const handleSubmit = () => () => {
+        dispatch(getLocation(cityInput))
         dispatch(getEvents({ idInput, calendarApi }))
     }
 

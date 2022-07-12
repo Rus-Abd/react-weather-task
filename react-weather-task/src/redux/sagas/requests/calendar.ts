@@ -10,6 +10,7 @@ type Tacc = {
     text: string
     id: string
 }
+
 export default async function requestGetEvents(idInput: string, calendar: Icalendar) {
     let temp: Tacc[] = []
 

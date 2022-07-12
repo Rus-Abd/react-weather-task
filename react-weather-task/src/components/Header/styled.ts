@@ -22,4 +22,5 @@ export const Location = styled.div`
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
+    height: 40px;
 `

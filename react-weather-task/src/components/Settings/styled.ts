@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 import settingsIcon from '../../assets/icons8-settings.svg'
 
+type Tprops = {
+    show: boolean
+}
+
 export const SettingsEl = styled.div`
     margin-top: 15px;
     display: flex;
@@ -15,7 +19,7 @@ export const SettingsIcon = styled.span`
     cursor: pointer;
 `
 export const SettingsBox = styled.ul`
-    display: ${(props) => (props.show ? 'flex' : 'none')};
+    display: ${(props: Tprops) => (props.show ? 'flex' : 'none')};
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;

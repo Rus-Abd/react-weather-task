@@ -1,19 +1,14 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getWeather } from '../../redux/slices/weatherSlice'
+import React from 'react'
+import { useSelector } from 'react-redux'
+
 import { Istate } from '../../types'
 
 import Loader from '../Loader/Loader'
 import { List, ListItem, WeatherContainer } from './styled'
 
 function Weather() {
-    const dispatch = useDispatch()
     const isLoading = useSelector((state: Istate) => state.calendar.isLoading)
     const weatherArr = useSelector((state: Istate) => state.weather.weatherArr)
-
-    useEffect(() => {
-        dispatch(getWeather())
-    }, [])
 
     return (
         <WeatherContainer>

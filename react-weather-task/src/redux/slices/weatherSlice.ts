@@ -12,6 +12,7 @@ const weatherSlice = createSlice({
 
     reducers: {
         getWeather(state) {
+            console.log('GET WEATHER')
             return {
                 ...state,
                 isLoading: true,
@@ -19,6 +20,8 @@ const weatherSlice = createSlice({
         },
 
         loadWeather(state, { payload }) {
+            console.log('lOAD WEATHER')
+            console.log(payload)
             return { ...state, isLoading: false, weatherArr: payload }
         },
 
