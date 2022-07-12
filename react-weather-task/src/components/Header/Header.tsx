@@ -6,7 +6,7 @@ import useTime from '../../utils/useTime'
 import Loader from '../Loader/Loader'
 import Settings from '../Settings/Settings'
 
-import { HeaderEl, HeaderH1, HeaderH2, Location } from './styled'
+import { HeaderEl, HeaderH1, HeaderH2, Location, LocationContainer } from './styled'
 
 function Header() {
     const isLoading = useSelector((state: Istate) => state.calendar.isLoading)
@@ -19,10 +19,10 @@ function Header() {
                 <HeaderH1>{date.time}</HeaderH1>
                 <HeaderH2>{date.date}</HeaderH2>
             </div>
-            <div>
+            <LocationContainer>
                 <Location>{isLoading ? <Loader /> : `${location.city || ''}`}</Location>{' '}
                 <Settings />
-            </div>
+            </LocationContainer>
         </HeaderEl>
     )
 }

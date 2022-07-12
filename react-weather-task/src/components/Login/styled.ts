@@ -15,6 +15,10 @@ export const Form = styled.form`
     padding: 5px 35px;
     color: var(--white);
     z-index: 10;
+
+    @media screen and (max-width: 900px) {
+        top: 65%;
+    }
 `
 export const FormButton = styled.button`
     margin-top: var(--x5);

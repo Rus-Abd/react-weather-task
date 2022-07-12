@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initState = {
     isLoading: false,
     err: null,
-    location: { city: 'undefined', country: 'undefined' },
+    location: { city: '' },
     lat: 0,
     long: 0,
 }

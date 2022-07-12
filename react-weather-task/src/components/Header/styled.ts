@@ -20,7 +20,16 @@ export const HeaderH2 = styled.h2`
 
 export const Location = styled.div`
     color: var(--white);
+    align-self: flex-end;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     height: 40px;
+`
+
+export const LocationContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    width: 150px;
+    height: 200px;
 `

@@ -1,19 +1,20 @@
 import React from 'react'
-import './App.css'
+
 import Events from './components/Events/Events'
 
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
 import Weather from './components/Weather/Weather'
+import { Container } from './globalStyles'
 
 function App() {
     return (
-        <div className="container">
-            <Login />
+        <Container>
             <Header />
             <Events />
             <Weather />
-        </div>
+            <Login />
+        </Container>
     )
 }
 

@@ -7,6 +7,7 @@ export default async function requestGetLocation(city: string) {
     )
         .then((res) => res.json())
         .then((res) => {
+            console.log(res)
             latitude = res[0].lat
             longitude = res[0].lon
         })
