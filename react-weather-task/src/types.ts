@@ -1,5 +1,3 @@
-import { Location } from './components/Header/styled'
-
 export type TweatherList = {
     dt_txt: string
     main: { temp: string }
@@ -36,7 +34,7 @@ export interface IhourlyWeather {
 export interface Istate {
     calendar: { isLoading: boolean; events: TformattedEvent[] }
     weather: {
-        weatherArr: IformattedWeather[] | IhourlyWeather[]
+        weatherArr: { time: string; id: string; icon: string; weather: string }[]
         isLoading: boolean
         err: Error
         weekly: boolean

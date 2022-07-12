@@ -1,6 +1,6 @@
 import formatDailyWeather from '../../../pipes/dailyWeatherPipe'
 import formatWeather from '../../../pipes/weatherPipe'
-import { IformattedWeather, Iweather } from '../../../types'
+import { Iweather } from '../../../types'
 import store from '../../store/store'
 
 export const requestGetDailyWeather = async () => {
@@ -29,7 +29,7 @@ const requestGetWeather = async () => {
     )
         .then((res) => res.json())
         .then((result: Iweather) => {
-            weatherArr = formatWeather(result) as IformattedWeather[]
+            weatherArr = formatWeather(result)
         })
 
     return weatherArr

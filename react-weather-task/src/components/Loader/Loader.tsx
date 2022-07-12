@@ -1,8 +1,8 @@
 import React from 'react'
-import './loader.css'
+import LoaderEl from './styled'
 
 function Loader() {
-    return <span className="loader" />
+    return <LoaderEl className="loader" />
 }
 
 export default Loader

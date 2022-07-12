@@ -13,8 +13,6 @@ const weatherSlice = createSlice({
 
     reducers: {
         getWeather(state) {
-            console.log('GET WEATHER')
-
             return {
                 ...state,
                 isLoading: true,
@@ -23,8 +21,6 @@ const weatherSlice = createSlice({
         },
 
         getDailyWeather(state) {
-            console.log('GET Daily WEATHER')
-
             return {
                 ...state,
                 isLoading: true,
@@ -33,9 +29,6 @@ const weatherSlice = createSlice({
         },
 
         loadWeather(state, { payload }) {
-            console.log('lOAD WEATHER')
-            console.log(`weekly${state.weekly}`)
-            console.log(payload)
             return { ...state, isLoading: false, weatherArr: payload }
         },
 

@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import Login from '../../components/Login/Login'
 
 const initState = {
     isLoading: false,
@@ -15,8 +14,6 @@ const locationSlice = createSlice({
 
     reducers: {
         getLocation(state, { payload }) {
-            console.log('GETLOCATION')
-            console.log(`getLocation payload:${payload}`)
             return {
                 ...state,
                 isLoading: true,
@@ -25,9 +22,6 @@ const locationSlice = createSlice({
         },
 
         loadLocation(state, { payload }) {
-            console.log('LOADLOCATION')
-            console.log(`loadLocation payload:`)
-            console.log(payload)
             return { ...state, isLoading: false, long: payload.longitude, lat: payload.latitude }
         },
 

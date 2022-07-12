@@ -9,14 +9,16 @@ function Events() {
 
     return (
         <List>
-            {eventsArray && eventsArray.length > 0
-                ? eventsArray.map(({ id, time, text }) => (
-                      <ListItem key={id}>
-                          <span>{time}</span>
-                          <p>{text}</p>
-                      </ListItem>
-                  ))
-                : null}
+            {eventsArray && eventsArray.length > 0 ? (
+                eventsArray.map(({ id, time, text }) => (
+                    <ListItem key={id}>
+                        <span>{time}</span>
+                        <p>{text}</p>
+                    </ListItem>
+                ))
+            ) : (
+                <ListItem>NO EVENTS</ListItem>
+            )}
         </List>
     )
 }

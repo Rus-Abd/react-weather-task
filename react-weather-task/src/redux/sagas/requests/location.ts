@@ -1,7 +1,4 @@
-import { Tlocation } from '../../../types'
-
 export default async function requestGetLocation(city: string) {
-    console.log('REQUESTGETLOCATION')
     let latitude = 0
     let longitude = 0
 
@@ -13,6 +10,6 @@ export default async function requestGetLocation(city: string) {
             latitude = res[0].lat
             longitude = res[0].lon
         })
-    console.log(latitude, longitude)
+
     return { latitude, longitude }
 }

@@ -1,9 +1,13 @@
-import { Iweather } from '../types'
+import { IformattedWeather, Iweather } from '../types'
+
+type Tacc = {
+    icon: string
+    id: string
+}
 
 const weekDays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
 const formatWeather = (weatherObj: Iweather) => {
-    console.log(weatherObj)
     const formattedWeather = weatherObj.list.reduce((acc, curr) => {
         const currDate = new Date(curr.dt_txt)
         const currDay = weekDays[currDate.getDay()]
@@ -19,8 +23,16 @@ const formatWeather = (weatherObj: Iweather) => {
             },
         }
     }, {})
-    console.log(Object.entries(formattedWeather))
-    return Object.entries(formattedWeather)
+
+    const res = (Object.entries(formattedWeather) as IformattedWeather[]).reduce(
+        (acc: Tacc[], curr) => [
+            ...acc,
+            { time: curr[0], icon: curr[1].icon, id: curr[1].id, weather: curr[1].weather },
+        ],
+        []
+    )
+
+    return res
 }
 
 export default formatWeather

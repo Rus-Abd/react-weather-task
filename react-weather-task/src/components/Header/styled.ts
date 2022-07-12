@@ -3,23 +3,23 @@ import styled from 'styled-components'
 export const HeaderEl = styled.header`
     display: flex;
     justify-content: space-between;
-    color: #ffffff;
+    color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
 `
 export const HeaderH1 = styled.h1`
-    color: #ffffff;
+    color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 52px;
 `
 
 export const HeaderH2 = styled.h2`
-    color: #ffffff;
+    color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-size: var(--x4);
 `
 
 export const Location = styled.div`
-    color: #ffffff;
+    color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     height: 40px;

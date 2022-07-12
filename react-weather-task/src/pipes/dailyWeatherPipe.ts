@@ -6,7 +6,6 @@ type Tacc = {
 }
 
 const formatDailyWeather = (weather: IdailyWeather) => {
-    console.log(weather)
     const res = weather.forecast.forecastday[0].hour.reduce((acc: Tacc[], curr, index) => {
         if (index % 4 === 0) {
             const currDate = new Date(curr.time)

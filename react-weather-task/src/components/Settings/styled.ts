@@ -6,7 +6,7 @@ type Tprops = {
 }
 
 export const SettingsEl = styled.div`
-    margin-top: 15px;
+    margin-top: var(--x2);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -24,10 +24,10 @@ export const SettingsBox = styled.ul`
     align-items: center;
     flex-direction: column;
     list-style: none;
-    margin-top: 15px;
+    margin-top: var(--x2);
     background-color: rgba(255, 255, 255, 0.13);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
+    border-radius: var(--x1);
+    backdrop-filter: blur(var(--x1));
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     width: 140px;
