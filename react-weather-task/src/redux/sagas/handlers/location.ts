@@ -8,10 +8,10 @@ import requestGetWeather from '../requests/weather'
 export default function* handleGetLocation({ payload }: ReturnType<typeof getLocation>) {
     try {
         const cords: YieldExpression = yield call(requestGetLocation, payload)
-        const events: YieldExpression = yield call(requestGetWeather)
-
         yield put(loadLocation(cords))
-        yield put(loadWeather(events))
+        const weatherArray: YieldExpression = yield call(requestGetWeather)
+
+        yield put(loadWeather(weatherArray))
     } catch (error) {
         yield put(failedLocation(error))
     }

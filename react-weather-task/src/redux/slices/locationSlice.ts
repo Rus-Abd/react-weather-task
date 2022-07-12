@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import Login from '../../components/Login/Login'
 
 const initState = {
     isLoading: false,
@@ -27,7 +28,7 @@ const locationSlice = createSlice({
             console.log('LOADLOCATION')
             console.log(`loadLocation payload:`)
             console.log(payload)
-            return { ...state, isLoading: false }
+            return { ...state, isLoading: false, long: payload.longitude, lat: payload.latitude }
         },
 
         failedLocation(state, { payload }) {
